@@ -2,6 +2,8 @@
 
 This project is designed to play backing tracks along with a band or simply to listen to your music. It supports MP3 files and provides a user-friendly interface for managing and playing tracks.
 
+[Track Player Live Demo](https://track-player-8u9l.onrender.com/)
+
 ## Technologies Used
 
 - **Ruby on Rails**: The backend framework for building the application.
