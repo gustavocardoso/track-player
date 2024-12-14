@@ -1,24 +1,61 @@
-# README
+# Track Player
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is designed to play backing tracks along with a band or simply to listen to your music. It supports MP3 files and provides a user-friendly interface for managing and playing tracks.
 
-Things you may want to cover:
+## Technologies Used
 
-* Ruby version
+- **Ruby on Rails**: The backend framework for building the application.
+- **Vanilla JavaScript**: For client-side interactivity.
+- **MP3 Files**: The format used for audio tracks.
 
-* System dependencies
+## Getting Started
 
-* Configuration
+To get started with the project, follow these steps:
 
-* Database creation
+1. **Clone the Repository**:
 
-* Database initialization
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
+   ```
 
-* How to run the test suite
+2. **Install Dependencies**: Make sure you have the necessary gems installed:
 
-* Services (job queues, cache servers, search engines, etc.)
+   ```bash
+   bundle install
+   ```
 
-* Deployment instructions
+3. **Set Up the Database**: Run the following commands to set up your database:
 
-* ...
+   ```bash
+   rails db:create
+   rails db:migrate
+   ```
+
+4. **Start the Server**: To start the Rails server, run:
+
+   ```bash
+   rails server
+   ```
+
+5. **Access the Application**:
+   - Navigate to `http://localhost:3000` to access the player.
+   - Go to `http://localhost:3000/admin` to add new tracks.
+
+## Features
+
+- Play backing tracks in MP3 format.
+- Admin interface for adding and managing tracks.
+- User-friendly design for easy navigation.
+
+## Screenshot
+
+![Track Player Screenshot](public/assets/images/screenshots/trackplayer.png)
+
+## Contributing
+
+If you would like to contribute to this project, please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
