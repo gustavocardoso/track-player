@@ -284,11 +284,21 @@
       obj.player.addEventListener(
         'loadedmetadata',
         function () {
+          console.log('Load metadata event')
+          obj.songElapsedDisplay.innerHTML = '00:00'
+          obj.barTimeLeft.innerHTML = '00:00'
+        },
+        false
+      )
+      obj.player.addEventListener(
+        'timeupdate',
+        function () {
+          obj.songElapsedDisplay.innerHTML = '00:00'
+          obj.barTimeLeft.innerHTML = '00:00'
+
           var songDuration = parseInt(obj.player.duration)
           var songCurrentTime = parseInt(obj.player.currentTime)
-
           var songTimeLeft = parseInt(Number(songDuration) - Number(songCurrentTime))
-
           var progressBarWidth = Math.floor((songCurrentTime / songDuration) * 245)
           var songSecondsLeft
           var songMinutesLeft
@@ -306,12 +316,16 @@
           songCurrentMinutes = Math.floor(songCurrentTime / 60)
           songCurrentSeconds = Math.floor(songCurrentTime - songCurrentMinutes * 60)
 
-          obj.songElapsedDisplay.innerHTML = songTotalTimeLeft
           obj.barElapsedTime.innerHTML =
             (songCurrentMinutes < 10 ? '0' + songCurrentMinutes : songCurrentMinutes) +
             ':' +
             (songCurrentSeconds < 10 ? '0' + songCurrentSeconds : songCurrentSeconds)
-          obj.barTimeLeft.innerHTML = '- ' + songTotalTimeLeft
+
+          if (songCurrentTime > 0) {
+            obj.songElapsedDisplay.innerHTML = songTotalTimeLeft
+            obj.barTimeLeft.innerHTML = '- ' + songTotalTimeLeft
+          }
+
           obj.setElapsedTimeBar(obj, '#999', false, progressBarWidth)
         },
         { once: true }
